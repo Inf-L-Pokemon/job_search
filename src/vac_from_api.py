@@ -22,7 +22,14 @@ class HeadHunterAPI(VacAPI):
 
         while self.page < vac_json["pages"] - 1:
             self.page += 1
-            response = requests.get(self.__basic_url, params={"text": self.__text, "page": self.page, "per_page": self.per_page})
+            response = requests.get(
+                self.__basic_url,
+                params={
+                    "text": self.__text,
+                    "page": self.page,
+                    "per_page": self.per_page,
+                },
+            )
             vac_json["items"].extend(response.json()["items"])
 
         return vac_json
