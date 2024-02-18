@@ -20,10 +20,12 @@ class VacFile(ABC):
     def add_vac(self):
         pass
 
+    @staticmethod
     @abstractmethod
-    def get_vac_from_file(self):
+    def get_vac_from_file():
         pass
 
+    @staticmethod
     @abstractmethod
-    def del_vac(self):
+    def del_vac():
         pass
